@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const dotenv = require('dotenv')
 
-dotenv.config({ path: '.env.local' })
+dotenv.config({ path: '/home/pi/sandbox/node/smartshackbot/.env.local' })
 
 const five = require('johnny-five');
 const board = new five.Board({
@@ -10,7 +10,7 @@ const board = new five.Board({
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = process.env.TG_TOKEN;
-
+console.log(token)
 const admins = [ 1249342787, 1027435130 ]
 const isAdmin = (tgId) => {
     if(admins.indexOf(tgId) !== -1){
@@ -133,7 +133,7 @@ bot.on('message', (msg) => {
 
 bot.on('polling_error', (err) => {
     console.log(err)
-    console.log(relay1)
+    //console.log(relay1)
 })
 
 process.on('uncaughtException', function(err){
