@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const dotenv = require('dotenv')
 
-dotenv.config({ path: '.env.local' })
+dotenv.config({ path: __dirname + '/.env.local' })
 
 const five = require('johnny-five');
 const board = new five.Board({
@@ -133,7 +133,7 @@ bot.on('message', (msg) => {
 
 bot.on('polling_error', (err) => {
     console.log(err)
-    console.log(relay1)
+    //console.log(relay1)
 })
 
 process.on('uncaughtException', function(err){
