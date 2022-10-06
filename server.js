@@ -10,7 +10,7 @@ const board = new five.Board({
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = process.env.TG_TOKEN;
-
+console.log(token)
 const admins = [ 1249342787, 1027435130 ]
 const isAdmin = (tgId) => {
     if(admins.indexOf(tgId) !== -1){
