@@ -132,10 +132,14 @@ bot.on('message', (msg) => {
 });
 
 bot.on('polling_error', (err) => {
-    console.log(err)
+    console.log(Date(), err)
     //console.log(relay1)
 })
 
+bot.on('error', (err) => {
+    console.log(Date(), err)
+})
+
 process.on('uncaughtException', function(err){
-	console.log(err);
+	console.log(Date(), err);
 })
